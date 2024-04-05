@@ -1,0 +1,109 @@
+Q1 Calculate the product of all the elements in the given array.
+ANS - #include<iostream>
+      using namespace std;
+      int main(){
+          int arr[] = {1,2,3,4,5,6,7,8};
+          int n = sizeof(arr)/4;
+          int product = 1;
+          for(int i=0;i<n;i++){
+              product *= arr[i];
+      
+          }
+          cout<<product;
+      }
+OUTPUT - 40320
+
+Q2 Find the second largest element in the given Array in one pass.
+ANS - #include<iostream>
+      #include<climits>
+      using namespace std;
+      int main(){
+          int arr[] = {11,21,3,42,2};
+          int n = sizeof(arr)/4;
+          int mx = INT_MIN;
+          int smx = INT_MIN;
+          for(int i=0;i<n;i++){
+              if(arr[i]>mx){
+                  smx = mx;
+                  mx = arr[i];
+              }
+              
+          }
+          cout<<mx<<endl;
+          cout<<smx<<endl;
+          
+      }
+OUTPUT- 42
+        21
+
+Q3 Find the minimum value out of all elements in the array.
+ANS - #include<iostream>
+      using namespace std;
+      int main(){
+          int arr[] = {1,-3,2,-5,-2,6,3};
+          int n = sizeof(arr)/4;
+          int mn = arr[0]; // INT_MAX
+          for(int i=1;i<n;i++){
+              if(arr[i]<mn) mn = arr[i];
+              // mn = min(mn,arr[i]);
+      
+          }
+          cout<<mn;
+      }
+OUTPUT- -5
+
+Q4 Given an array, predict if the array contains duplicates or not.
+ANS - #include<iostream>
+      using namespace std;
+      int main(){
+          int arr[] = {1,-3,2,-5,3,6,3};
+          int n = sizeof(arr)/4;
+          bool flag = false;// false->no duplicate
+          for(int i=0;i<n;i++){
+              for(int j=i+1;j<n;j++){
+                  if(arr[i]== arr[j]){
+                      flag = true;
+                      break;
+                  }
+              }
+              if(flag == true) break;
+          }
+          if(flag == true) cout<<"Contain Duplicate";
+          else cout<<"All elements are unique";
+      } 
+OUTPUT - Contain Duplicate
+
+Q5 WAP to find the smallest missing positive element in the sorted Array that contains only positive elements.
+ANS - #include<iostream>
+      using namespace std;
+      int main(){
+          int arr[] = {1,2,3,4,6};
+            cout<<"missing number : ";
+          int n = sizeof(arr)/4;
+          bool flag = false;// false->no missing
+          for(int i=0;i<n;i++){ 
+                  if(arr[i]!= i+1){
+                      flag = true;
+                      cout<<i+1;
+                      break;
+                  }
+          }
+          if(flag == false){
+              cout<<"There was no missing element";
+          } 
+      
+      }
+OUTPUT - missing number : 5
+
+Q6 Predict the output.
+    #include<iostream>
+    using namespace std;
+    int main(){
+        int sub[50], i ;
+        for ( i = 0 ; i <= 48 ; i++ ) ;
+        {
+        sub[i] = i ;
+        cout<<sub[i]<<endl ;
+        }
+    }
+OUTPUT- 49 
